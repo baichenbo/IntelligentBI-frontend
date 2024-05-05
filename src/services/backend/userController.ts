@@ -29,20 +29,6 @@ export async function deleteUserUsingPost(
   });
 }
 
-/** getUserById GET /api/user/get */
-export async function getUserByIdUsingGet(
-  // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)
-  params: API.getUserByIdUsingGETParams,
-  options?: { [key: string]: any },
-) {
-  return request<API.BaseResponseUser_>('/api/user/get', {
-    method: 'GET',
-    params: {
-      ...params,
-    },
-    ...(options || {}),
-  });
-}
 
 /** getLoginUser GET /api/user/get/login */
 export async function getLoginUserUsingGet(options?: { [key: string]: any }) {
@@ -52,20 +38,6 @@ export async function getLoginUserUsingGet(options?: { [key: string]: any }) {
   });
 }
 
-/** getUserVOById GET /api/user/get/vo */
-export async function getUserVoByIdUsingGet(
-  // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)
-  params: API.getUserVOByIdUsingGETParams,
-  options?: { [key: string]: any },
-) {
-  return request<API.BaseResponseUserVO_>('/api/user/get/vo', {
-    method: 'GET',
-    params: {
-      ...params,
-    },
-    ...(options || {}),
-  });
-}
 
 /** listUserByPage POST /api/user/list/page */
 export async function listUserByPageUsingPost(
@@ -82,20 +54,6 @@ export async function listUserByPageUsingPost(
   });
 }
 
-/** listUserVOByPage POST /api/user/list/page/vo */
-export async function listUserVoByPageUsingPost(
-  body: API.UserQueryRequest,
-  options?: { [key: string]: any },
-) {
-  return request<API.BaseResponsePageUserVO_>('/api/user/list/page/vo', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    data: body,
-    ...(options || {}),
-  });
-}
 
 /** userLogin POST /api/user/login */
 export async function userLoginUsingPost(
@@ -108,21 +66,6 @@ export async function userLoginUsingPost(
       'Content-Type': 'application/json',
     },
     data: body,
-    ...(options || {}),
-  });
-}
-
-/** userLoginByWxOpen GET /api/user/login/wx_open */
-export async function userLoginByWxOpenUsingGet(
-  // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)
-  params: API.userLoginByWxOpenUsingGETParams,
-  options?: { [key: string]: any },
-) {
-  return request<API.BaseResponseLoginUserVO_>('/api/user/login/wx_open', {
-    method: 'GET',
-    params: {
-      ...params,
-    },
     ...(options || {}),
   });
 }
@@ -171,21 +114,6 @@ export async function updateUserUsingPost(
   options?: { [key: string]: any },
 ) {
   return request<API.BaseResponseBoolean_>('/api/user/update', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    data: body,
-    ...(options || {}),
-  });
-}
-
-/** updateMyUser POST /api/user/update/my */
-export async function updateMyUserUsingPost(
-  body: API.UserUpdateMyRequest,
-  options?: { [key: string]: any },
-) {
-  return request<API.BaseResponseBoolean_>('/api/user/update/my', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

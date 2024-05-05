@@ -1,17 +1,17 @@
 import Footer from '@/components/Footer';
 
-import {CommentOutlined, LockOutlined, UserOutlined} from '@ant-design/icons';
-import {LoginForm, ProFormCaptcha, ProFormInstance, ProFormText} from '@ant-design/pro-components';
+import {LockOutlined, UserOutlined} from '@ant-design/icons';
+import {LoginForm, ProFormInstance, ProFormText} from '@ant-design/pro-components';
 import {useEmotionCss} from '@ant-design/use-emotion-css';
-import {Helmet, history, useModel} from '@umijs/max';
+import {Helmet, history} from '@umijs/max';
 import {message, Tabs} from 'antd';
 import React, {useRef, useState} from 'react';
 import Settings from '../../../../config/defaultSettings';
-import {sendCaptchaUsingPost, userRegisterUsingPost} from "@/services/backend/userController";
+import {userRegisterUsingPost} from "@/services/backend/userController";
 
 const Login: React.FC = () => {
   const [type, setType] = useState<string>('account');
-  const { initialState, setInitialState } = useModel('@@initialState');
+//  const { initialState, setInitialState } = useModel('@@initialState');
   const formRef = useRef<ProFormInstance>();
 
   const containerClassName = useEmotionCss(() => {
